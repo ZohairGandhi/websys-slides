@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>reveal.js</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/moon.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/solarized-dark.css">
+
+	<style>
+		ul ul {
+			font-size: smaller;
+		}
+
+		.high {
+			color: #D33682;
+		}
+
+		table.law-table td {
+			border: none;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1 style="color: #2AA198;">31268 Web Systems</h1>
+				<h2>Week 10</h2>
+				<h3 style="color: #2AA198;">Zohair Gandhi</h3>
+			</section>
+
+			<section>
+				<h2>Quiz 2</h2>
+
+				<ul>
+					<li class="fragment">Material from <span class="high">Week 7-10</span> will be tested</li>
+					<li class="fragment">Quiz will be <span class="high">run in the beginning</span> of the lab</li>
+					<li class="fragment">Remember to <span class="high">bring your student ID</span> or other valid ID</li>
+					<li class="fragment">
+						You may refer to your own notes
+						<ul>
+							<li class="fragment">Must be a printed document, PDF or locally saved document; <span class="high">accessing notes online is not permitted</span></li>
+							<li class="fragment">Must be your notes; <span class="high">screenshots of the slides or images from the Internet not permitted</span></li>
+						</ul>
+					</li>
+					<li class="fragment"><span class="high">Programmable calculators</span> with number system conversion functions are <span class="high">not permitted</span>; using your <span class="high">phone's calculator</span> also <span class="high">not permitted</span></li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Boolean Algebra</h2>
+
+				<ul>
+					<li class="fragment">In Boolean algebra, variables can have one of two values: <em
+							class="high">true</em> (1) or <em class="high">false</em> (0)</li>
+
+					<li class="fragment">
+						It uses logical operators such as:
+						<ul>
+							<li class="fragment">conjunction (<em class="high">AND</em>), denoted as <span
+									class="high">$\wedge$</span></li>
+							<li class="fragment">disjunction (<em class="high">OR</em>), denoted as <span
+									class="high">$\vee$</span></li>
+							<li class="fragment">negation (<em class="high">NOT</em>), denoted as <span
+									class="high">$\neg$</span></li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Basic Operations</h2>
+
+				<table class="fragment" style="font-size: xx-large;">
+					<tr class="high">
+						<th>Operator</th>
+						<th>Notation</th>
+						<th>Alternative Notation</th>
+						<th>Definition</th>
+					</tr>
+
+					<tr class="fragment">
+						<td>AND</td>
+						<td>$x \wedge y$</td>
+						<td>$x \cdot y, xy$</td>
+						<td>Only true when both x and y are true</td>
+					</tr>
+
+					<tr class="fragment">
+						<td>OR</td>
+						<td>$x \vee y$</td>
+						<td>$x + y$</td>
+						<td>Only false when both x and y are false</td>
+					</tr>
+
+					<tr class="fragment">
+						<td>NOT</td>
+						<td>$\neg x$</td>
+						<td>$X$</td>
+						<td>Inverts the value of x</td>
+					</tr>
+				</table>
+			</section>
+
+			<section>
+				<h2>Truth Tables</h2>
+
+				<ul class="fragment">
+					<li><span class="high">$\oplus$</span> is the <span class="high">Exclusive OR (XOR)</span> operation
+					</li>
+				</ul>
+
+				<table class="fragment">
+					<tr class="high">
+						<th>$x$</th>
+						<th>$y$</th>
+						<th>$x \wedge y$</th>
+						<th>$x \vee y$</th>
+						<th>$x \oplus y$</th>
+						<th>$\neg x$</th>
+					</tr>
+
+					<tr class="fragment">
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>0</td>
+						<td>1</td>
+					</tr>
+
+					<tr class="fragment">
+						<td>1</td>
+						<td>0</td>
+						<td>0</td>
+						<td>1</td>
+						<td>1</td>
+						<td>0</td>
+					</tr>
+
+					<tr class="fragment">
+						<td>0</td>
+						<td>1</td>
+						<td>0</td>
+						<td>1</td>
+						<td>1</td>
+					</tr>
+
+					<tr class="fragment">
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>0</td>
+					</tr>
+				</table>
+			</section>
+
+			<section data-auto-animate>
+				<h2>Boolean Algebra Laws</h2>
+
+				<ul class="fragment">
+					<li>Boolean algebra satisfies many ordinary algebra laws when considering <span class="high">$\vee$ as addition</span> and
+						<span class="high">$\wedge$ as multiplication</span></li>
+				</ul>
+
+				<table class="law-table" style="font-size: x-large;">
+					<tr class="fragment">
+						<td class="high">Associativity of $\vee$:</td>
+						<td>$x \vee (y \vee z) = (x \vee y) \vee z$</td>
+					</tr>
+
+					<tr class="fragment">
+						<td class="high">Associativity of $\wedge$:</td>
+						<td>$x \wedge (y \wedge z) = (x \wedge y) \wedge z$</td>
+					</tr>
+
+					<tr class="fragment">
+						<td class="high">Commutativity of $\vee$:</td>
+						<td>$x \vee y = y \vee x$</td>
+					</tr>
+
+					<tr class="fragment">
+						<td class="high">Commutativity of $\wedge$:</td>
+						<td>$x \wedge y = y \wedge x$</td>
+					</tr>
+
+					<tr class="fragment">
+						<td class="high">Distributivity of $\wedge$ over $\vee$:</td>
+						<td>$x \wedge (y \vee z) = (x \wedge y) \vee (x \wedge z)$</td>
+					</tr>
+
+					<tr class="fragment">
+						<td class="high">Identity for $\vee$:</td>
+						<td>$x \vee 0 = x$</td>
+					</tr>
+
+					<tr class="fragment">
+						<td class="high">Identity for $\wedge$:</td>
+						<td>$x \wedge 1 = x$</td>
+					</tr>
+
+					<tr class="fragment">
+						<td class="high">Annihilator for $\wedge$:</td>
+						<td>$x \wedge 0 = 0$</td>
+					</tr>
+				</table>
+			</section>
+
+			<section data-auto-animate>
+				<h2>Boolean Algebra Laws</h2>
+
+				<ul>
+					<li>Some laws only hold in Boolean algebra, not in ordinary algebra</li>
+				</ul>
+
+				<table class="law-table" style="font-size: xx-large;">
+					<tr class="fragment">
+						<td class="high">Annihilator for $\vee$:</td>
+						<td>$x \vee 1 = 1$</td>
+					</tr>
+
+					<tr class="fragment">
+						<td class="high">Distributivity of $\vee$ over $\wedge$:</td>
+						<td>$x \vee (y \wedge z) = (x \vee y) \wedge (x \vee z)$</td>
+					</tr>
+				</table>
+			</section>
+
+			<section>
+				<h2>De Morgan's Laws</h2>
+
+				<table class="law-table">
+					<tr class="fragment">
+						<td class="high">De Morgan 1</td>
+						<td>$\neg x \wedge \neg y = \neg (x \vee y)$</td>
+					</tr>
+
+					<tr class="fragment">
+						<td class="high">De Morgan 2</td>
+						<td>$\neg x \vee \neg y = \neg (x \wedge y)$</td>
+					</tr>
+				</table>
+			</section>
+
+			<section>
+				<h2>Today's Agenda</h2>
+
+				<ul>
+					<li>Complete <span class="high">Lesson 7: Data Processing</span></li>
+					<li><span class="high">Practice Boolean algebra</span> questions on Canvas</li>
+					<li><span class="high">Catch-up</span> on any incomplete Ed lessons</li>
+				</ul>
+
+				<div style="
+					background-color: #D33682;
+					color: #EEE8D5;
+					margin-top: 5rem;
+					padding: 1rem;
+				">
+					Lesson 7: Data Processing and Web Assignment Peer Marking due Oct 20, 5:00 p.m.
+				</div>
+			</section>
+
+			<section>
+				<ul>
+					<li>Subject Coordinator: Dr. Darryl Veitch (<span class="high">darryl.veitch@uts.edu.au</span>)</li>
+					<li>Head Tutor: Zohair Gandhi (<span class="high">zohair.gandhi-1@uts.edu.au</span>)</li>
+					<li>Assistant Tutor: Zohair Gandhi (<span class="high">kevin.casareo@uts.edu.au</span>)</li>
+				</ul>
+
+				<h2 style="margin-top: 5rem;">See you next week!</h2>
+			</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script src="plugin/math/math.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX]
+		});
+	</script>
+</body>
+
+</html>
